@@ -32,7 +32,7 @@ public class parallel : MonoBehaviour
         float isleV = player.velocity.x / divide;
         Vector2 curPos = transform.position; // get current position
 
-        curPos.x -= isleV * Time.fixedDeltaTime;
+        curPos.x -= 2*(isleV * Time.fixedDeltaTime);
 
         if(curPos.x < -40)
         {
