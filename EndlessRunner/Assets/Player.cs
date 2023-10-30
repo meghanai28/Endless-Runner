@@ -115,8 +115,6 @@ public class Player : MonoBehaviour
 
         }
 
-        distance += velocity.x * Time.fixedDeltaTime; // distance calculation
-
         if(onGround)
         {
             
@@ -142,7 +140,12 @@ public class Player : MonoBehaviour
             else
             {
                 RaycastHit2D hit2 = Physics2D.Raycast(raycastOrigin, raycastDirection, 8);
-                if(hit2.collider != null)
+                Spike spike = hit.collider.GetComponent<Spike>();
+                if (hit2.collider != null)
+                {
+                    Destroy(GameObject.Find("Player"));
+                }
+                if (spike != null)
                 {
                     Destroy(GameObject.Find("Player"));
                 }
