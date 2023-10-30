@@ -93,8 +93,8 @@ public class Player : MonoBehaviour
             if(hit.collider != null)
             {
                 Ground ground = hit.collider.GetComponent<Ground>();
-                
-                if(ground != null && raycastDistance <0)
+                Spike spike = hit.collider.GetComponent<Spike>();
+                if (ground != null && raycastDistance <0)
                 {
                     gHeight = ground.gHeight;
                     position.y = gHeight;
@@ -104,6 +104,12 @@ public class Player : MonoBehaviour
                 {
                     Destroy(GameObject.Find("Player"));
                 }
+
+                if (spike != null)
+                {
+                    Destroy(GameObject.Find("Player"));
+                }
+
             }
 
 
@@ -129,8 +135,7 @@ public class Player : MonoBehaviour
 
             RaycastHit2D hit = Physics2D.Raycast(raycastOrigin, raycastDirection, raycastDistance);
 
-
-            if(hit.collider == null)
+            if (hit.collider == null)
             {
                onGround = false;
             }
