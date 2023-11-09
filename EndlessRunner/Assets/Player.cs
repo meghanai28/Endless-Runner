@@ -106,7 +106,6 @@ public class Player : MonoBehaviour
                    velocity.y = -10 * Time.fixedDeltaTime; // fall down
                 }
 
-
                 if (spike != null)
                 {
                    Destroy(GameObject.Find("Player"));
@@ -143,11 +142,11 @@ public class Player : MonoBehaviour
             {
                 RaycastHit2D hit2 = Physics2D.Raycast(raycastOrigin, raycastDirection, 8);
                 Spike spike = hit.collider.GetComponent<Spike>();
-                if (hit2.collider != null)
+                /*if (hit2.collider != null) // this code makes the jumps jittery
                 {
                     holdJump = false;
                     velocity.y = -10 * Time.fixedDeltaTime;
-                }
+                }*/
                 if (spike != null)
                 {
                     Destroy(GameObject.Find("Player"));
