@@ -94,20 +94,22 @@ public class Player : MonoBehaviour
             {
                 Ground ground = hit.collider.GetComponent<Ground>();
                 Spike spike = hit.collider.GetComponent<Spike>();
-                if (ground != null && raycastDistance <0)
+                if (ground != null && raycastDistance <0) // hits something below
                 {
                     gHeight = ground.gHeight;
                     position.y = gHeight;
                     onGround = true;
                 }
-                else if (ground != null)
+                else if (ground != null) // hits something from above
                 {
-                    Destroy(GameObject.Find("Player"));
+                   holdJump = false;
+                   velocity.y = -10; // fall down
                 }
+
 
                 if (spike != null)
                 {
-                    Destroy(GameObject.Find("Player"));
+                   Destroy(GameObject.Find("Player"));
                 }
 
             }
@@ -143,7 +145,8 @@ public class Player : MonoBehaviour
                 Spike spike = hit.collider.GetComponent<Spike>();
                 if (hit2.collider != null)
                 {
-                    Destroy(GameObject.Find("Player"));
+                    holdJump = false;
+                    velocity.y = -10;
                 }
                 if (spike != null)
                 {
