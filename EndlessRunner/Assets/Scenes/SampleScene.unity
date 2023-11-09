@@ -685,7 +685,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f85c4dc64159041379aa1125827c0a60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  divide: 1
+  divide: 5
 --- !u!1 &1342939896
 GameObject:
   m_ObjectHideFlags: 0

@@ -83,7 +83,7 @@ public class Player : MonoBehaviour
             }
 
 
-            Vector2 raycastOrigin = new Vector2(position.x + 0.7f, position.y);
+            Vector2 raycastOrigin = new Vector2(position.x + 0.7f, position.y- 0.7f);
             Vector2 raycastDirection = Vector2.up;
             float raycastDistance = velocity.y * Time.fixedDeltaTime;
 
@@ -103,7 +103,7 @@ public class Player : MonoBehaviour
                 else if (ground != null) // hits something from above
                 {
                    holdJump = false;
-                   velocity.y = -10; // fall down
+                   velocity.y = -10 * Time.fixedDeltaTime; // fall down
                 }
 
 
@@ -129,7 +129,7 @@ public class Player : MonoBehaviour
                 velocity.x = maxVelocityX;
             }
 
-            Vector2 raycastOrigin = new Vector2(position.x, position.y);
+            Vector2 raycastOrigin = new Vector2(position.x + 0.7f, position.y - 0.7f);
             Vector2 raycastDirection = Vector2.up;
             float raycastDistance = velocity.y * Time.fixedDeltaTime;
 
@@ -146,7 +146,7 @@ public class Player : MonoBehaviour
                 if (hit2.collider != null)
                 {
                     holdJump = false;
-                    velocity.y = -10;
+                    velocity.y = -10 * Time.fixedDeltaTime;
                 }
                 if (spike != null)
                 {
