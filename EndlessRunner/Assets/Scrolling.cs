@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class Scrolling : MonoBehaviour
 {
   
-    float depth = 100;
+    float depth = 200;
     [SerializeField] private RawImage img;
     Player player;
 
@@ -19,6 +19,6 @@ public class Scrolling : MonoBehaviour
     void Update()
     {
         float playerVelocity = player.velocity.x/depth;
-        img.uvRect = new Rect(img.uvRect.position + new Vector2(playerVelocity,0) * Time.deltaTime,img.uvRect.size);
+        img.uvRect = new Rect(img.uvRect.position + new Vector2(playerVelocity,0) * Time.deltaTime, img.uvRect.size);
     }
 }
