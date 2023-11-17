@@ -116,6 +116,8 @@ public class Player : MonoBehaviour
 
         }
 
+        distance += velocity.x * Time.fixedDeltaTime;
+
         if(onGround)
         {
             
