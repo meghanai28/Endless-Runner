@@ -8,6 +8,7 @@ public class Player : MonoBehaviour
     public float gravity; // gravity that acts on the player
     public Vector2 velocity; // velocity of the player (both horizontal and vertical)
 
+    private int health = 3;
     public float accelerationX = 10;
     public float maxAccX = 10;
     
@@ -29,6 +30,7 @@ public class Player : MonoBehaviour
     public float jmpGroundLeeway = 1; // give player leeway when they are close to the ground because humans cant see perfectly
 
     public float distance =0; // player distance
+
 
     // Start is called before the first frame update
     void Start()
@@ -94,6 +96,7 @@ public class Player : MonoBehaviour
             {
                 Ground ground = hit.collider.GetComponent<Ground>();
                 Spike spike = hit.collider.GetComponent<Spike>();
+                    
                 if (ground != null && raycastDistance <0) // hits something below
                 {
                     gHeight = ground.gHeight;
@@ -108,7 +111,7 @@ public class Player : MonoBehaviour
 
                 if (spike != null)
                 {
-                   Destroy(GameObject.Find("Player"));
+                    health--;
                 }
 
             }
@@ -151,7 +154,7 @@ public class Player : MonoBehaviour
                 }*/
                 if (spike != null)
                 {
-                    Destroy(GameObject.Find("Player"));
+                    health--;
                 }
             }
 
@@ -159,5 +162,10 @@ public class Player : MonoBehaviour
 
 
        transform.position = position; // change the position of the object after update occurs
+        if (health <= 0)
+        {
+            Destroy(GameObject.Find("Player"));
+            Time.timeScale = 0;
+        }
     }
 }
