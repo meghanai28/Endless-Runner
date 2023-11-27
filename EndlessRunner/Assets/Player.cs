@@ -8,7 +8,7 @@ public class Player : MonoBehaviour
     public float gravity; // gravity that acts on the player
     public Vector2 velocity; // velocity of the player (both horizontal and vertical)
 
-    private int health = 3;
+    public static int health = 3;
     public float accelerationX = 10;
     public float maxAccX = 10;
     
@@ -32,10 +32,11 @@ public class Player : MonoBehaviour
     public float distance =0; // player distance
 
 
+
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -155,6 +156,7 @@ public class Player : MonoBehaviour
                 if (spike != null)
                 {
                     health--;
+
                 }
             }
 

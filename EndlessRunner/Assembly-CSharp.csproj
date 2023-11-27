@@ -59,12 +59,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets/Parallel.cs" />
-    <Compile Include="Assets/TextMesh Pro/NewMonoBehaviour.cs" />
     <Compile Include="Assets/Player.cs" />
+    <Compile Include="Assets/Health/HealthW.cs" />
     <Compile Include="Assets/Scrolling.cs" />
     <Compile Include="Assets/Spike.cs" />
+    <Compile Include="Assets/Health/HealthO.cs" />
     <Compile Include="Assets/UIController.cs" />
     <Compile Include="Assets/scroller.cs" />
+    <Compile Include="Assets/Health/HealthN.cs" />
     <Compile Include="Assets/Ground.cs" />
     <Compile Include="Assets/Lollipop.cs" />
   </ItemGroup>
