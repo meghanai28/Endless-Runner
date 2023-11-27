@@ -29,9 +29,16 @@ public class Player : MonoBehaviour
 
     public float jmpGroundLeeway = 1; // give player leeway when they are close to the ground because humans cant see perfectly
 
-    public float distance =0; // player distance
+    public float distance = 0; // player distance
 
+    private bool invincible = true;
 
+    private IEnumerator sinvincible()
+    {
+        invincible = true;
+        yield return new WaitForSeconds(1.0f);
+        invincible = false;
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -112,7 +119,14 @@ public class Player : MonoBehaviour
 
                 if (spike != null)
                 {
-                    health--;
+                    if (!invincible)
+                    {
+                        health--;
+
+                    }
+                    StartCoroutine(sinvincible());
+
+
                 }
 
             }
@@ -155,7 +169,13 @@ public class Player : MonoBehaviour
                 }*/
                 if (spike != null)
                 {
-                    health--;
+                    if (!invincible)
+                    {
+                        health--;
+
+                    }
+                    StartCoroutine(sinvincible());
+
 
                 }
             }
