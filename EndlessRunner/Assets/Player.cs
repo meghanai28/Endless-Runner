@@ -31,19 +31,28 @@ public class Player : MonoBehaviour
 
     public float distance = 0; // player distance
 
-    private bool invincible = true;
+    private bool invincible = false;
+
+    private SpriteRenderer playerRend;
 
     private IEnumerator sinvincible()
     {
         invincible = true;
-        yield return new WaitForSeconds(1.0f);
+        for(int i = 0; i < 4; i++)
+        {
+            playerRend.color = new Color(1, 0, 0, 0.5f);
+            yield return new WaitForSeconds(0.25f);
+            playerRend.color = Color.white;
+            yield return new WaitForSeconds(0.25f);
+        }
+
         invincible = false;
     }
 
     // Start is called before the first frame update
     void Start()
     {
-
+        playerRend = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame

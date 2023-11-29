@@ -1,12 +1,12 @@
 ﻿<Properties StartupConfiguration="{0AB39ACD-2EE6-E15C-4D2B-642E1651D37D}|">
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Health/HealthW.cs">
     <Files>
-      <File FileName="Assets/Health/HealthN.cs" Line="9" Column="56" />
+      <File FileName="Assets/Health/HealthN.cs" Line="18" Column="6" />
       <File FileName="Assets/Health/HealthO.cs" Line="14" Column="32" />
       <File FileName="Assets/Health/HealthW.cs" Line="8" Column="6" />
       <File FileName="Assets/Ground.cs" />
       <File FileName="Assets/Lollipop.cs" />
-      <File FileName="Assets/Player.cs" Line="130" Column="18" />
+      <File FileName="Assets/Player.cs" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
