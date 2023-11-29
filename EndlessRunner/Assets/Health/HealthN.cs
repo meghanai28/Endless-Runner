@@ -5,8 +5,7 @@ public class HealthN : MonoBehaviour
 {
     // Use this for initialization
     void Start()
-    {
-        GameObject phealth = GameObject.Find("Player");
+    { 
     }
 
     // Update is called once per frame

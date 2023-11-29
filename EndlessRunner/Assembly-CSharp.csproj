@@ -61,6 +61,7 @@
     <Compile Include="Assets/Parallel.cs" />
     <Compile Include="Assets/Player.cs" />
     <Compile Include="Assets/Health/HealthW.cs" />
+    <Compile Include="Assets/NewBehaviourScript.cs" />
     <Compile Include="Assets/Scrolling.cs" />
     <Compile Include="Assets/Spike.cs" />
     <Compile Include="Assets/Health/HealthO.cs" />

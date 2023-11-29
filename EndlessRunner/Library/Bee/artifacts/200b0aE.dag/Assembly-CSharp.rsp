@@ -375,6 +375,7 @@
 "Assets/Health/HealthO.cs"
 "Assets/Health/HealthW.cs"
 "Assets/Lollipop.cs"
+"Assets/NewBehaviourScript.cs"
 "Assets/Parallel.cs"
 "Assets/Player.cs"
 "Assets/scroller.cs"
