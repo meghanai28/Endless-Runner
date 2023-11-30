@@ -4473,12 +4473,21 @@ m_ResolvedPackages:
     - 1.8.7
     - 1.8.8
     - 1.8.9
+<<<<<<< Updated upstream
+=======
+    - 1.8.10
+>>>>>>> Stashed changes
     compatible:
     - 1.8.4
     - 1.8.7
     - 1.8.8
     - 1.8.9
+<<<<<<< Updated upstream
     recommended: 1.8.9
+=======
+    - 1.8.10
+    recommended: 1.8.10
+>>>>>>> Stashed changes
     deprecated: []
   dependencies:
   - name: com.unity.mathematics
