@@ -8,6 +8,7 @@ public class Player : MonoBehaviour
     public float gravity; // gravity that acts on the player
     public Vector2 velocity; // velocity of the player (both horizontal and vertical)
 
+    public static int health = 3;
     public float accelerationX = 10;
     public float maxAccX = 10;
     
@@ -28,12 +29,30 @@ public class Player : MonoBehaviour
 
     public float jmpGroundLeeway = 1; // give player leeway when they are close to the ground because humans cant see perfectly
 
-    public float distance =0; // player distance
+    public float distance = 0; // player distance
+
+    private bool invincible = false;
+
+    private SpriteRenderer playerRend;
+
+    private IEnumerator sinvincible()
+    {
+        invincible = true;
+        for(int i = 0; i < 4; i++)
+        {
+            playerRend.color = new Color(1, 0, 0, 0.5f);
+            yield return new WaitForSeconds(0.25f);
+            playerRend.color = Color.white;
+            yield return new WaitForSeconds(0.25f);
+        }
+
+        invincible = false;
+    }
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        playerRend = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -94,6 +113,7 @@ public class Player : MonoBehaviour
             {
                 Ground ground = hit.collider.GetComponent<Ground>();
                 Spike spike = hit.collider.GetComponent<Spike>();
+                    
                 if (ground != null && raycastDistance <0) // hits something below
                 {
                     gHeight = ground.gHeight;
@@ -108,7 +128,14 @@ public class Player : MonoBehaviour
 
                 if (spike != null)
                 {
-                   Destroy(GameObject.Find("Player"));
+                    if (!invincible)
+                    {
+                        health--;
+
+                    }
+                    StartCoroutine(sinvincible());
+
+
                 }
 
             }
@@ -151,7 +178,14 @@ public class Player : MonoBehaviour
                 }*/
                 if (spike != null)
                 {
-                    Destroy(GameObject.Find("Player"));
+                    if (!invincible)
+                    {
+                        health--;
+
+                    }
+                    StartCoroutine(sinvincible());
+
+
                 }
             }
 
@@ -159,5 +193,10 @@ public class Player : MonoBehaviour
 
 
        transform.position = position; // change the position of the object after update occurs
+        if (health <= 0)
+        {
+            Destroy(GameObject.Find("Player"));
+            Time.timeScale = 0;
+        }
     }
 }
