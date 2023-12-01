@@ -35,6 +35,11 @@ public class Player : MonoBehaviour
 
     private SpriteRenderer playerRend;
 
+    public GameOverScreen GameOverScreen;
+    public void GameOver() 
+    {
+        GameOverScreen.Setup();
+    }
     private IEnumerator sinvincible()
     {
         invincible = true;
@@ -53,6 +58,8 @@ public class Player : MonoBehaviour
     void Start()
     {
         playerRend = GetComponent<SpriteRenderer>();
+        health = 3;
+        Time.timeScale = 1f;
     }
 
     // Update is called once per frame
@@ -197,6 +204,7 @@ public class Player : MonoBehaviour
         {
             Destroy(GameObject.Find("Player"));
             Time.timeScale = 0;
+            GameOver();
         }
     }
 }
