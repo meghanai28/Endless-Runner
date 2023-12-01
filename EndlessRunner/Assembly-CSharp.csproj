@@ -64,8 +64,10 @@
     <Compile Include="Assets/NewBehaviourScript.cs" />
     <Compile Include="Assets/Scrolling.cs" />
     <Compile Include="Assets/Spike.cs" />
+    <Compile Include="Assets/CameraAspect.cs" />
     <Compile Include="Assets/Health/HealthO.cs" />
     <Compile Include="Assets/UIController.cs" />
+    <Compile Include="Assets/GameOverScreen.cs" />
     <Compile Include="Assets/scroller.cs" />
     <Compile Include="Assets/Health/HealthN.cs" />
     <Compile Include="Assets/Ground.cs" />
